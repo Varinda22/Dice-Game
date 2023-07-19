@@ -1,0 +1,334 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+    
+ 
+  .changename{
+    position: absolute;
+    top: 100px;
+    left: 685px;
+  }
+  .box {
+    border: 2px dotted black;
+    width: 9.7%;
+    height: 50px;
+    border-radius: 5px;
+    
+    box-sizing: border-box;
+    margin: 2px;
+  }
+
+  .box p {
+    text-align: center;
+    font-size: large;
+    
+  }
+  .box1 {
+    border: 2px dotted black;
+    width: 9.7%;
+    height: 50px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin: 2px;
+   
+  }
+
+  .section1 {
+    width: 30%;
+    float: left;
+    margin-left: 350px;
+    position: relative;
+    top: 50px;
+}
+.section3{
+  width: 30%;
+    float: left;
+    position: absolute;
+    top: 140px;
+    right: 52px;
+   
+}
+
+  .box1 p {
+    text-align: center;
+    font-size: large;
+  }
+
+  button {
+    
+    background: #4ecca3;
+            font-family: "Indie Flower", cursive;
+            border-radius: 7px;
+            color: #ffff;
+            font-size: 15px;
+            padding: 16px 25px 16px 25px;
+            text-decoration: none;
+  }
+  .button:hover{
+    background: #232931;
+    text-decoration: none;
+  }
+  .container{
+    width: auto;
+    height: auto;
+    border: 1px solid;
+    float: left;
+    padding: 20px;
+    position: absolute;
+    margin-top: 200px;
+    left: 685px;
+    
+    background-image: linear-gradient(to right, rgb(194, 124, 191) , yellow);
+
+    
+  }
+  .container1 {
+            width: 70%;
+            margin: auto;
+            text-align: center;
+        }
+     
+    .left{
+      position: absolute;
+      left: 355px;
+      word-wrap: break-word;
+      background-color: rgb(165, 222, 222);
+    }
+    .right{
+      position: absolute;
+      right: 455px;
+      word-wrap: break-word;
+      background-color: rgb(165, 222, 222);
+    }
+    .main{
+      background-color: rgba(100, 125, 216, 0.3);
+        overflow: hidden;
+        border-radius: 60px;
+        border: 0.2px solid rgb(108, 56, 239);
+       height: 100vh;
+
+        
+    }
+    
+  
+</style>
+
+<body>
+  <div class="main">
+  <div class="container1">
+    <h1>Let's Play</h1>
+
+    <div class="left">
+        <p class="player1" >Player 1</p>
+        
+    </div>
+
+    <div class="right">
+        <p class="Player2">Player 2</p>
+       
+    </div>
+    <div class="changename">
+      <button type="button" class="butn"
+          onClick="editNames()">
+          Edit Names
+      </button>
+   
+  </div>
+</div>
+  
+    <div class="section1">
+     
+    <div class="box">
+      <p>1</p>
+    </div>
+    <div class="box">
+      <p>2</p>
+    </div>
+    <div class="box">
+      <p>3</p>
+    </div>
+    <div class="box">
+      <p>4</p>
+    </div>
+    <div class="box">
+      <p>5</p>
+    </div>
+    <div class="box">
+      <p>6</p>
+    </div>
+    <div class="box">
+      <p>7</p>
+    </div>
+    <div class="box">
+      <p>8</p>
+    </div>
+    <div class="box">
+      <p>9</p>
+    </div>
+    <div class="box">
+      <p>10</p>
+    </div>
+ 
+    <button id="var"  type="button" onclick="ab()">Click</button>
+    
+    
+  </div>
+  <div class="section2">
+    <div class="container">
+      <h1 id="ab"></h1>
+      <h1 id="ab1"></h1>
+      <p><marquee class="marq" bgcolor="lightgrey"  direction="left">Number Generated: <br></p></marquee>
+      <span id="e"></span>
+    </div>
+  </div>
+  <label id="label_warning"></label>
+  <div class="section3">
+    
+    <div class="box1">
+
+      <p>1</p>
+    </div>
+    <div class="box1">
+      <p>2</p>
+    </div>
+    <div class="box1">
+      <p>3</p>
+    </div>
+    <div class="box1">
+      <p>4</p>
+    </div>
+    <div class="box1">
+      <p>5</p>
+    </div>
+    <div class="box1">
+      <p>6</p>
+    </div>
+    <div class="box1">
+      <p>7</p>
+    </div>
+    <div class="box1">
+      <p>8</p>
+    </div>
+    <div class="box1">
+      <p>9</p>
+    </div>
+    <div class="box1">
+      <p>10</p>
+    </div>
+
+    <button id="var1"  type="button"  onclick="abc()">Click</button>
+  </div>
+  
+
+</div>
+
+
+</body>
+<audio id="piano-music">
+  <source src="piano-music.mp3" >
+</audio>
+<audio  id="retro-game-notification">
+  <source src="retro-game-notification.wav">
+</audio>
+<audio id="beep-warning">
+  <source src="beep-warning.mp3" >
+</audio>
+</audio>
+<audio  id="win">
+  <source src="win.wav">
+</audio>
+<script>
+  var audio_piano = document.getElementById('piano-music');
+        var audio_retro = document.getElementById('retro-game-notification');
+        var audio_warning = document.getElementById('beep-warning');
+        var audio_win = document.getElementById('win');
+        let label_warning = document.getElementById("label_warning");
+        let label_random_left = document.getElementById('random-left');
+        let label_random_right = document.getElementById('random-right');
+        let sum_left = document.getElementById('sum-left');
+        let sum_right = document.getElementById('sum-right');
+  var x = 0
+  function editNames() {
+            player1 = prompt("Change Player1 name");
+            player2 = prompt("Change player2 name");
+  
+            document.querySelector("p.Player1")
+                            .innerHTML = player1;
+                              
+            document.querySelector("p.Player2")
+                            .innerHTML = player2;
+        }
+  
+  function ab() {
+    audio_piano.play();
+        let label_warning = document.getElementById("label_warning");
+    const rndInt = Math.floor(Math.random() * 4) + 1
+                    
+    document.getElementById("var").disabled = true;
+  document.getElementById("var1").disabled = false;
+    x = rndInt + x
+    document.getElementById("e").innerHTML = rndInt
+    if(x<=10){
+      for (let i = 0; i < x; i++ ) {
+        
+        if(x==10)  {
+          document.getElementsByClassName("box")[i].style.backgroundColor = "yellow"
+          document.getElementById("ab").innerHTML= "Player 1 is winner"
+          document.getElementById("var1").disabled = true;
+          document.getElementById("var").disabled = true;
+         
+      }
+        else {
+          document.getElementsByClassName("box")[i].style.backgroundColor = "red"
+      }
+    }
+    }
+  else {
+    x=x-rndInt
+    alert("try again")
+  }
+
+  }
+ 
+  var x1 = 0
+  function abc() {
+    const rndInt = Math.floor(Math.random() * 4) + 1
+    x1 = rndInt + x1
+    document.getElementById("var1").disabled = true;
+  document.getElementById("var").disabled = false;
+    document.getElementById("e").innerHTML = rndInt
+    if(x1<=10){
+      for (let i = 0; i < x1; i++) {
+        if(x1==10){
+          document.getElementsByClassName("box1")[i].style.backgroundColor = "blue"
+          document.getElementById("ab").innerHTML="Player 2 is winner"
+          document.getElementById("var1").disabled = true;
+          document.getElementById("var").disabled = true;
+          
+      }
+        else{
+          document.getElementsByClassName("box1")[i].style.backgroundColor = "green"
+      }
+     
+    }
+  }
+    else {
+      x1=x1-rndInt
+      alert("try again")
+  }
+
+
+}
+
+
+
+
+</script>
+
+</html>
